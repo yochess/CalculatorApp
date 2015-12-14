@@ -39,9 +39,9 @@ Describe any challenges encountered while building the app.
 
 I had a very difficult time transitioning from step 3 to step 4.
 The video walkthrough (which was excellent) did not go over 
-navigation. I originally used a navigation bar which kept 
-crashing the program when pushed. I finally gave that option up 
-and went with a navigation controller instead.
+navigation. I originally used a bar button within a navigation bar 
+which kept crashing the program when pushed. I finally gave that 
+option up and went with a navigation controller instead.
 
 It was also a challenge for me to figure out how NSUserDefaults 
 is implemented. I couldn't figure it out on my own, so I surf the 
