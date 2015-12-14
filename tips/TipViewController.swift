@@ -18,13 +18,15 @@ class TipViewController: UIViewController {
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
-    
+
     // tip and total are initialized to 0 onload
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tipLabel.text = "0.00"
         totalLabel.text = "$0.00"
+        
+        billField.becomeFirstResponder()
     }
     
     // if time elapsed is less than 10 minutes, 
@@ -76,12 +78,10 @@ class TipViewController: UIViewController {
         
         defaults.setInteger(tipControl.selectedSegmentIndex, forKey: "myNum")
         defaults.setObject(billAmount, forKey: "myField")
-
     }
 
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
     }
-
 }
 
