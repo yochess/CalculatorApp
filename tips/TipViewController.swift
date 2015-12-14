@@ -62,14 +62,17 @@ class TipViewController: UIViewController {
         
         let billAmount = NSString(string: billField.text!).doubleValue
         
+        // found this gem on
+        // http://nshipster.com/nsformatter/
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        formatter.locale = NSLocale(localeIdentifier: "en_US")
+        
         let tip = billAmount * tipPercentage
         let total = billAmount + tip
         
-        tipLabel.text = "$\(tip)"
-        totalLabel.text = "$\(total)"
-        
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
+        tipLabel.text = formatter.stringFromNumber(tip)
+        totalLabel.text = formatter.stringFromNumber(total)
         
         defaults.setInteger(tipControl.selectedSegmentIndex, forKey: "myNum")
         defaults.setObject(billAmount, forKey: "myField")
